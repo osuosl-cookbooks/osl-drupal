@@ -1,4 +1,4 @@
-cookbook "php", ">= 1.3.12"
+cookbook "php", "<= 1.2.4"
 cookbook "yum", "< 3.0.0"
 
 site :opscode
