@@ -19,17 +19,17 @@
 
 include_recipe "php"
 include_recipe "yum"
+include_recipe "yum::epel"
 
 yum_repository "drush" do
+    name "drush"
     url node['osl-drupal']['drush']['repo-url']
     action :add
 end
 
 package "drush" do
-    if node['osl-drupal']['drush']['version'] do
+    if node['osl-drupal']['drush']['version'] then
     version node['osl-drupal']['drush']['version']
     end
     action :install
 end
-
-
