@@ -18,14 +18,18 @@
 #
 
 include_recipe "php"
+include_recipe "yum"
+include_recipe "yum::epel"
 
-# Add Drush pear channel
-drush = php_pear_channel "pear.drush.org" do
-    action :discover
+yum_repository "drush" do
+    name "drush"
+    url node['osl-drupal']['drush']['repo-url']
+    action :add
 end
 
-# Install drush via PEAR
-php_pear "drush" do
-    channel drush.channel_name
+package "drush" do
+    if node['osl-drupal']['drush']['version'] then
+    version node['osl-drupal']['drush']['version']
+    end
     action :install
 end
