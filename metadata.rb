@@ -8,4 +8,4 @@ version          '0.2.1'
 depends          'php'
 depends          'yum', '>= 3.0.0'
 
-supports         'centos', '~> 6'
+supports         'centos', '~> 6.0'
