@@ -3,3 +3,7 @@ suites:
   - name: default
     run_list:
       - recipe[osl-drupal::default]
+  - name: drush
+    run_list:
+      - recipe[yum::epel]
+      - recipe[osl-drupal::drush]
