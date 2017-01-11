@@ -1,14 +1,9 @@
 ---
-provisioner:
-  name: chef_solo
-
 suites:
   - name: default
     run_list:
       - recipe[osl-drupal::default]
-    attributes:
   - name: drush
     run_list:
       - recipe[yum::epel]
       - recipe[osl-drupal::drush]
-    attributes:
