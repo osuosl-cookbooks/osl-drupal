@@ -1,5 +1,5 @@
 cookbook 'php', '<= 1.2.4'
-cookbook 'yum', '< 3.0.0'
+cookbook 'yum'
 
 source   'https://supermarket.chef.io'
 metadata
